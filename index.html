@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Home — Agence immobilière à Bruxelles</title>
+<meta name="description" content="Capital Home SA — Agence immobilière à Bruxelles. Service zéro souci pour un rendement garanti. Avenue Louise 326, 1050 Bruxelles.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Capital Home — Agence immobilière à Bruxelles">
+<meta property="og:description" content="Service zéro souci pour un rendement garanti. Contactez-nous au +32 477 07 13 39.">
+<meta property="og:url" content="https://www.capitalhome.be/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #B8975C;
+  --gold-dark: #8C6E3F;
+  --navy: #0F1B3D;
+  --cream: #FAF7F2;
+  --text: #1A1A1A;
+  --muted: #6B6B6B;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============= HERO ============= */
+.hero {
+  background: linear-gradient(135deg, #0F1B3D 0%, #1A2952 100%);
+  color: white;
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(184, 151, 92, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.brand-mark-icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.brand-mark-text {
+  text-align: left;
+}
+.brand-name {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+}
+.brand-sub {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 24px 0 16px;
+  color: white;
+}
+
+h1 .accent {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-tagline {
+  font-size: 19px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+.hero-cta:hover { background: #C9A66E; transform: translateY(-2px); }
+
+.hero-secondary {
+  display: inline-block;
+  margin-left: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 16px 24px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.hero-secondary:hover { color: var(--gold); }
+
+/* ============= NOTICE ============= */
+.notice {
+  background: #FFF8E6;
+  border-bottom: 3px solid var(--gold);
+  padding: 16px 24px;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  color: #6B4A1A;
+}
+
+/* ============= SERVICES ============= */
+.section {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 32px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--navy);
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 16px auto 0;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: white;
+  padding: 36px 28px;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(15, 27, 61, 0.06);
+  border-top: 3px solid var(--gold);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(15, 27, 61, 0.1);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: var(--gold);
+  font-weight: bold;
+  border: 2px solid var(--gold);
+}
+
+.service-card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.service-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============= CONTACT ============= */
+.contact-section {
+  background: var(--navy);
+  color: white;
+  padding: 80px 24px;
+}
+
+.contact-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-section h2 {
+  color: white;
+  text-align: left;
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+.contact-section h2::after {
+  margin: 16px 0 0 0;
+  background: var(--gold);
+}
+
+.contact-lead {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 17px;
+  margin-bottom: 32px;
+}
+
+.contact-info {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.contact-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  min-width: 80px;
+  padding-top: 4px;
+}
+
+.contact-value {
+  color: white;
+  flex: 1;
+}
+.contact-value a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 151, 92, 0.5);
+  transition: border-color 0.2s;
+}
+.contact-value a:hover { border-color: var(--gold); }
+
+.contact-cta-block {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 36px;
+  border-radius: 6px;
+  border-left: 3px solid var(--gold);
+}
+
+.contact-cta-block h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: white;
+  font-weight: normal;
+}
+.contact-cta-block p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.contact-cta-btn {
+  display: block;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  padding: 16px;
+  text-align: center;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+.contact-cta-btn:hover { background: #C9A66E; }
+
+.contact-cta-btn.secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+.contact-cta-btn.secondary:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* ============= FOOTER ============= */
+footer {
+  background: #0A1230;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 40px 24px;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+}
+
+footer .legal {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+footer .copyright {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 768px) {
+  h1 { font-size: 32px; }
+  .hero { padding: 60px 20px 50px; }
+  .hero-secondary { display: block; margin: 16px 0 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-cta-block { padding: 28px; }
+  .section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="notice">
+  Site en cours de mise à jour — pour toute demande, contactez-nous au <strong>+32 477 07 13 39</strong>
+</div>
+
+<!-- ============= HERO ============= -->
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="brand-mark">
+      <div class="brand-mark-icon">C</div>
+      <div class="brand-mark-text">
+        <div class="brand-name">CAPITAL HOME</div>
+        <div class="brand-sub">Bruxelles · Depuis 2013</div>
+      </div>
+    </div>
+
+    <h1>Notre service&nbsp;: <span class="accent">zéro souci</span><br>pour un rendement garanti</h1>
+
+    <p class="hero-tagline">Vente, gestion locative et conseil immobilier à Bruxelles</p>
+
+    <a href="tel:+32477071339" class="hero-cta">📞 +32 477 07 13 39</a>
+    <a href="mailto:contact@capitalhome.be" class="hero-secondary">✉ contact@capitalhome.be</a>
+
+  </div>
+</section>
+
+<!-- ============= SERVICES ============= -->
+<section class="section">
+  <h2>Nos services</h2>
+  <p class="section-intro">Une expertise complète en immobilier résidentiel sur Bruxelles, de l'estimation à la gestion long terme.</p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">★</div>
+      <h3>Vente immobilière</h3>
+      <p>Estimation gratuite, mise en valeur de votre bien, négociation et suivi jusqu'à l'acte authentique.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⌂</div>
+      <h3>Gestion locative</h3>
+      <p>Recherche de locataires fiables, encaissement des loyers, indexation annuelle, états des lieux et suivi technique.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">€</div>
+      <h3>Conseil en investissement</h3>
+      <p>Analyse de rendement, sélection de biens à fort potentiel, accompagnement fiscal et juridique.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">✓</div>
+      <h3>Mandat exclusif</h3>
+      <p>Un agent dédié, un dossier unique, une communication claire. Votre projet immobilier mérite un interlocuteur unique.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= CONTACT ============= -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+
+    <div>
+      <h2>Contactez-nous</h2>
+      <p class="contact-lead">Pour toute question sur la vente, l'achat ou la gestion de votre bien à Bruxelles.</p>
+
+      <div class="contact-info">
+
+        <div class="contact-row">
+          <div class="contact-label">Adresse</div>
+          <div class="contact-value">
+            <strong>Capital Home SA</strong><br>
+            Blue Tower<br>
+            Avenue Louise 326<br>
+            1050 Bruxelles
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-label">Téléphone</div>
+          <div class="contact-value">
+            <a href="tel:+32477071339">+32 477 07 13 39</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:contact@capitalhome.be">contact@capitalhome.be</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-label">TVA</div>
+          <div class="contact-value">BE 0533.747.448</div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-label">IPI</div>
+          <div class="contact-value">Agent immobilier agréé n° 501063</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="contact-cta-block">
+      <h3>Ne ratez aucune opportunité</h3>
+      <p>Contactez-nous sans engagement pour discuter de votre projet immobilier.</p>
+
+      <a href="tel:+32477071339" class="contact-cta-btn">Appeler maintenant</a>
+      <a href="mailto:contact@capitalhome.be?subject=Demande%20depuis%20capitalhome.be" class="contact-cta-btn secondary">Envoyer un email</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="legal">
+    <strong>Capital Home SA</strong> · Avenue Louise 326, 1050 Bruxelles<br>
+    TVA BE 0533.747.448 · IPI n° 501063 · Instance de contrôle&nbsp;: IPI, Rue de Luxembourg 16B, 1000 Bruxelles<br>
+    Soumis au code déontologique de l'IPI
+  </div>
+  <div class="copyright">
+    © Capital Home SA — Tous droits réservés
+  </div>
+</footer>
+
+</body>
+</html>

@@ -3,517 +3,927 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capital Home — Agence immobilière à Bruxelles</title>
-<meta name="description" content="Capital Home SA — Agence immobilière à Bruxelles. Service zéro souci pour un rendement garanti. Avenue Louise 326, 1050 Bruxelles.">
-<meta name="robots" content="index, follow">
+<title>Capital Home — Real Estate · Avenue Louise, Bruxelles</title>
+<meta name="description" content="Capital Home SA. Agence immobilière de référence à Bruxelles depuis 2013. Vente, location, gestion locative — Avenue Louise 326.">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Capital Home — Agence immobilière à Bruxelles">
-<meta property="og:description" content="Service zéro souci pour un rendement garanti. Contactez-nous au +32 477 07 13 39.">
+<meta property="og:title" content="Capital Home — Real Estate · Bruxelles">
+<meta property="og:description" content="Service zéro souci pour un rendement garanti. +32 477 07 13 39.">
 <meta property="og:url" content="https://www.capitalhome.be/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
+<meta name="theme-color" content="#0A1228">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --gold: #B8975C;
-  --gold-dark: #8C6E3F;
-  --navy: #0F1B3D;
+  --navy-950: #060B1C;
+  --navy-900: #0A1228;
+  --navy-800: #131D3D;
+  --navy-700: #1F2C54;
+  --gold-500: #C9A66E;
+  --gold-400: #D8B97D;
+  --gold-300: #E5CC9C;
   --cream: #FAF7F2;
-  --text: #1A1A1A;
-  --muted: #6B6B6B;
+  --paper: #FFFFFF;
+  --ink: #1A1A2E;
+  --ink-soft: #4A4A5C;
+  --ink-muted: #8A8A99;
+  --line: #E8E2D6;
+  --shadow-sm: 0 1px 2px rgba(10,18,40,.05);
+  --shadow-md: 0 4px 24px rgba(10,18,40,.06);
+  --shadow-lg: 0 24px 64px rgba(10,18,40,.12);
+  --ease: cubic-bezier(.2, .6, .2, 1);
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*::selection { background: var(--gold-500); color: var(--navy-900); }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  background: var(--cream);
-  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  color: var(--ink);
+  background: var(--cream);
 }
 
-/* ============= HERO ============= */
-.hero {
-  background: linear-gradient(135deg, #0F1B3D 0%, #1A2952 100%);
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 640px) { .container { padding: 0 20px; } }
+
+/* ═══════════════════════ TOPBAR ═══════════════════════ */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  background: rgba(10, 18, 40, .85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid rgba(201, 166, 110, .12);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: white;
-  padding: 80px 24px 60px;
-  text-align: center;
-  position: relative;
 }
+.brand {
+  display: flex; align-items: center; gap: 14px;
+}
+.brand-mark {
+  width: 42px; height: 42px;
+  border: 1.5px solid var(--gold-500);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 22px;
+  color: var(--gold-500);
+}
+.brand-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: .8px;
+  color: white;
+}
+.brand-text small {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-top: -2px;
+}
+.topbar-cta {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid rgba(201, 166, 110, .35);
+  border-radius: 999px;
+  transition: all .25s var(--ease);
+}
+.topbar-cta:hover { background: var(--gold-500); color: var(--navy-900); border-color: var(--gold-500); }
+.topbar-cta svg { width: 14px; height: 14px; }
 
+/* ═══════════════════════ NOTICE BANNER ═══════════════════════ */
+.notice {
+  background: var(--navy-950);
+  color: var(--gold-300);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 16px;
+  position: relative;
+  z-index: 101;
+  border-bottom: 1px solid rgba(201, 166, 110, .15);
+}
+.notice strong { color: var(--gold-400); font-weight: 600; }
+
+/* ═══════════════════════ HERO ═══════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(6, 11, 28, .92) 0%, rgba(10, 18, 40, .85) 60%, rgba(19, 29, 61, .88) 100%),
+    url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 100px;
+  overflow: hidden;
+}
 .hero::before {
   content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(184, 151, 92, 0.15), transparent 50%);
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(201, 166, 110, .18), transparent 50%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--cream));
   pointer-events: none;
 }
 
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
   position: relative;
+  z-index: 2;
+}
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.4fr .8fr; gap: 80px; }
 }
 
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 32px;
-}
-
-.brand-mark-icon {
-  width: 56px;
-  height: 56px;
-  border: 2px solid var(--gold);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, serif;
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--gold);
-}
-
-.brand-mark-text {
-  text-align: left;
-}
-.brand-name {
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: white;
-}
-.brand-sub {
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
   font-size: 11px;
   letter-spacing: 4px;
-  color: var(--gold);
   text-transform: uppercase;
-  margin-top: 4px;
+  color: var(--gold-400);
+  font-weight: 500;
+  margin-bottom: 28px;
+  animation: fadeUp .8s var(--ease) both;
+}
+.hero-eyebrow::before {
+  content: ''; width: 28px; height: 1px; background: var(--gold-500);
 }
 
-h1 {
-  font-size: 44px;
-  font-weight: normal;
-  line-height: 1.2;
-  margin: 24px 0 16px;
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(40px, 6vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -.5px;
+  margin-bottom: 24px;
+  animation: fadeUp .9s .1s var(--ease) both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-400);
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .8);
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fadeUp 1s .2s var(--ease) both;
+}
+
+.hero-actions {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeUp 1.1s .3s var(--ease) both;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 18px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .3s var(--ease);
+}
+.btn svg { width: 16px; height: 16px; }
+.btn-primary {
+  background: var(--gold-500);
+  color: var(--navy-900);
+  border-color: var(--gold-500);
+}
+.btn-primary:hover {
+  background: var(--gold-400);
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(201, 166, 110, .35);
+}
+.btn-ghost {
+  background: transparent;
   color: white;
+  border-color: rgba(255, 255, 255, .3);
+}
+.btn-ghost:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, .08);
 }
 
-h1 .accent {
-  color: var(--gold);
-  font-style: italic;
-}
-
-.hero-tagline {
-  font-size: 19px;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 36px;
-  font-style: italic;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--gold);
-  color: var(--navy);
-  text-decoration: none;
-  padding: 16px 36px;
+/* Hero card */
+.hero-card {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(201, 166, 110, .25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 4px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1px;
+  padding: 40px 36px;
+  animation: fadeUp 1.2s .4s var(--ease) both;
+}
+.hero-card-label {
+  font-size: 10px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  transition: all 0.2s;
+  color: var(--gold-400);
+  margin-bottom: 12px;
 }
-.hero-cta:hover { background: #C9A66E; transform: translateY(-2px); }
+.hero-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+.hero-card-list { list-style: none; }
+.hero-card-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  font-size: 14px;
+  color: rgba(255, 255, 255, .85);
+}
+.hero-card-list li:first-child { border-top: 0; }
+.hero-card-list svg {
+  width: 16px; height: 16px;
+  color: var(--gold-400);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
 
-.hero-secondary {
+/* ═══════════════════════ STATS BAND ═══════════════════════ */
+.stats {
+  background: var(--cream);
+  position: relative;
+  z-index: 3;
+  margin-top: -1px;
+  padding: 40px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 500;
+  color: var(--navy-900);
+  line-height: 1;
+}
+.stat-num small {
+  font-size: 22px;
+  color: var(--gold-500);
+  vertical-align: top;
+  margin-left: 2px;
+}
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* ═══════════════════════ SERVICES ═══════════════════════ */
+section { padding: 120px 0; }
+@media (max-width: 768px) { section { padding: 80px 0; } }
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px;
+}
+.section-eyebrow {
   display: inline-block;
-  margin-left: 16px;
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  padding: 16px 24px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 14px;
 }
-.hero-secondary:hover { color: var(--gold); }
-
-/* ============= NOTICE ============= */
-.notice {
-  background: #FFF8E6;
-  border-bottom: 3px solid var(--gold);
-  padding: 16px 24px;
-  text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 14px;
-  color: #6B4A1A;
-}
-
-/* ============= SERVICES ============= */
-.section {
-  padding: 80px 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section h2 {
-  font-size: 32px;
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: 16px;
-  color: var(--navy);
-}
-
-.section h2::after {
+.section-eyebrow::after {
   content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--gold);
-  margin: 16px auto 0;
+  position: absolute; left: 50%; bottom: 0;
+  width: 32px; height: 1px;
+  background: var(--gold-500);
+  transform: translateX(-50%);
 }
-
-.section-intro {
-  text-align: center;
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(34px, 4.5vw, 52px);
+  line-height: 1.15;
+  color: var(--navy-900);
+  margin-bottom: 24px;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold-500);
+  font-weight: 400;
+}
+.section-lead {
   font-size: 17px;
-  color: var(--muted);
-  max-width: 700px;
-  margin: 0 auto 50px;
+  color: var(--ink-soft);
+  line-height: 1.7;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
 }
-
-.service-card {
-  background: white;
-  padding: 36px 28px;
-  border-radius: 6px;
-  box-shadow: 0 2px 12px rgba(15, 27, 61, 0.06);
-  border-top: 3px solid var(--gold);
-  transition: transform 0.2s, box-shadow 0.2s;
+.service {
+  background: var(--paper);
+  padding: 56px 40px;
+  text-align: left;
+  position: relative;
+  transition: all .4s var(--ease);
 }
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(15, 27, 61, 0.1);
+.service:hover {
+  background: var(--navy-900);
+  color: white;
 }
+.service:hover .service-num,
+.service:hover .service-title { color: white; }
+.service:hover .service-desc { color: rgba(255, 255, 255, .75); }
+.service:hover .service-icon { background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-900); }
 
 .service-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--cream);
+  width: 56px; height: 56px;
+  border: 1px solid var(--line);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 22px;
-  color: var(--gold);
-  font-weight: bold;
-  border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 28px;
+  color: var(--gold-500);
+  transition: all .4s var(--ease);
 }
+.service-icon svg { width: 24px; height: 24px; }
 
-.service-card h3 {
-  font-size: 19px;
-  margin-bottom: 12px;
-  color: var(--navy);
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  transition: color .4s var(--ease);
 }
-
-.service-card p {
+.service-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--navy-900);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  transition: color .4s var(--ease);
+}
+.service-desc {
   font-size: 15px;
-  color: var(--muted);
-  line-height: 1.6;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  transition: color .4s var(--ease);
 }
 
-/* ============= CONTACT ============= */
-.contact-section {
-  background: var(--navy);
+/* ═══════════════════════ APPROACH ═══════════════════════ */
+.approach {
+  background: var(--navy-900);
   color: white;
-  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.approach::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(201, 166, 110, .12), transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(201, 166, 110, .08), transparent 50%);
+  pointer-events: none;
+}
+.approach .section-title { color: white; }
+.approach .section-lead { color: rgba(255, 255, 255, .75); }
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  position: relative; z-index: 1;
+}
+@media (min-width: 900px) {
+  .approach-grid { grid-template-columns: repeat(3, 1fr); gap: 60px; }
+}
+.approach-item {
+  border-top: 1px solid rgba(201, 166, 110, .35);
+  padding-top: 32px;
+}
+.approach-item-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 56px;
+  color: var(--gold-500);
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.approach-item-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+.approach-item-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, .7);
+  line-height: 1.65;
 }
 
+/* ═══════════════════════ CONTACT ═══════════════════════ */
+.contact-section {
+  background: var(--paper);
+}
 .contact-grid {
-  max-width: 900px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   align-items: start;
 }
-
-.contact-section h2 {
-  color: white;
-  text-align: left;
-  font-size: 32px;
-  font-weight: normal;
-  margin-bottom: 12px;
-}
-.contact-section h2::after {
-  margin: 16px 0 0 0;
-  background: var(--gold);
+@media (min-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
 }
 
-.contact-lead {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 17px;
-  margin-bottom: 32px;
+.contact-info-block {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
 }
-
-.contact-info {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 15px;
-}
-
-.contact-row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 18px;
-  align-items: flex-start;
-}
-
-.contact-label {
-  color: var(--gold);
+.contact-info-block + .contact-info-block { margin-top: 32px; }
+.contact-info-label {
+  font-size: 10px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 2px;
-  min-width: 80px;
-  padding-top: 4px;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+.contact-info-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--navy-900);
+  font-weight: 500;
+}
+.contact-info-value a { color: var(--navy-900); }
+.contact-info-value a:hover { color: var(--gold-500); }
+.contact-info-sub {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 6px;
 }
 
-.contact-value {
-  color: white;
-  flex: 1;
-}
-.contact-value a {
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(184, 151, 92, 0.5);
-  transition: border-color 0.2s;
-}
-.contact-value a:hover { border-color: var(--gold); }
-
-.contact-cta-block {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 36px;
-  border-radius: 6px;
-  border-left: 3px solid var(--gold);
-}
-
-.contact-cta-block h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: white;
-  font-weight: normal;
-}
-.contact-cta-block p {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 24px;
-  font-size: 15px;
-}
-
-.contact-cta-btn {
-  display: block;
-  background: var(--gold);
-  color: var(--navy);
-  text-decoration: none;
-  padding: 16px;
-  text-align: center;
+.contact-card {
+  background: var(--cream);
+  padding: 48px 40px;
   border-radius: 4px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 600;
+  border-top: 3px solid var(--gold-500);
+}
+.contact-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--navy-900);
+}
+.contact-card-lead {
   font-size: 15px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  transition: background 0.2s;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  line-height: 1.6;
 }
-.contact-cta-btn:hover { background: #C9A66E; }
-
-.contact-cta-btn.secondary {
+.contact-card .btn { width: 100%; margin-bottom: 12px; }
+.btn-dark {
+  background: var(--navy-900);
+  color: white;
+  border-color: var(--navy-900);
+}
+.btn-dark:hover {
+  background: var(--navy-800);
+  border-color: var(--navy-800);
+  transform: translateY(-2px);
+}
+.btn-outline {
   background: transparent;
-  color: var(--gold);
-  border: 2px solid var(--gold);
+  color: var(--navy-900);
+  border-color: var(--navy-900);
 }
-.contact-cta-btn.secondary:hover {
-  background: var(--gold);
-  color: var(--navy);
+.btn-outline:hover {
+  background: var(--navy-900);
+  color: white;
 }
 
-/* ============= FOOTER ============= */
+/* ═══════════════════════ FOOTER ═══════════════════════ */
 footer {
-  background: #0A1230;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 40px 24px;
-  text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
+  background: var(--navy-950);
+  color: rgba(255, 255, 255, .55);
+  padding: 80px 0 32px;
   font-size: 13px;
 }
-
-footer .legal {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
 }
-
-footer .copyright {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 12px;
-}
-
-/* ============= RESPONSIVE ============= */
 @media (max-width: 768px) {
-  h1 { font-size: 32px; }
-  .hero { padding: 60px 20px 50px; }
-  .hero-secondary { display: block; margin: 16px 0 0; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-cta-block { padding: 28px; }
-  .section { padding: 60px 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+.footer h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 18px;
+}
+.footer p, .footer li { margin-bottom: 8px; line-height: 1.7; }
+.footer ul { list-style: none; }
+.footer a:hover { color: var(--gold-400); }
+.footer-brand-line {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 20px;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .35);
+}
+
+/* ═══════════════════════ ANIMATIONS ═══════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+}
+[data-reveal].visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ═══════════════════════ ACCESSIBILITY ═══════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Focus visible */
+a:focus-visible, button:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 4px;
 }
 </style>
 </head>
 <body>
 
+<!-- ━━━━━━━━ NOTICE ━━━━━━━━ -->
 <div class="notice">
-  Site en cours de mise à jour — pour toute demande, contactez-nous au <strong>+32 477 07 13 39</strong>
+  <span>Site en cours de migration · Contactez-nous au <strong>+32 477 07 13 39</strong></span>
 </div>
 
-<!-- ============= HERO ============= -->
+<!-- ━━━━━━━━ TOPBAR ━━━━━━━━ -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">C</span>
+      <span class="brand-text">
+        Capital Home
+        <small>Real Estate · Bruxelles</small>
+      </span>
+    </a>
+    <a class="topbar-cta" href="tel:+32477071339">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +32 477 07 13 39
+    </a>
+  </div>
+</header>
+
+<!-- ━━━━━━━━ HERO ━━━━━━━━ -->
 <section class="hero">
-  <div class="hero-content">
-
-    <div class="brand-mark">
-      <div class="brand-mark-icon">C</div>
-      <div class="brand-mark-text">
-        <div class="brand-name">CAPITAL HOME</div>
-        <div class="brand-sub">Bruxelles · Depuis 2013</div>
-      </div>
-    </div>
-
-    <h1>Notre service&nbsp;: <span class="accent">zéro souci</span><br>pour un rendement garanti</h1>
-
-    <p class="hero-tagline">Vente, gestion locative et conseil immobilier à Bruxelles</p>
-
-    <a href="tel:+32477071339" class="hero-cta">📞 +32 477 07 13 39</a>
-    <a href="mailto:contact@capitalhome.be" class="hero-secondary">✉ contact@capitalhome.be</a>
-
-  </div>
-</section>
-
-<!-- ============= SERVICES ============= -->
-<section class="section">
-  <h2>Nos services</h2>
-  <p class="section-intro">Une expertise complète en immobilier résidentiel sur Bruxelles, de l'estimation à la gestion long terme.</p>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <div class="service-icon">★</div>
-      <h3>Vente immobilière</h3>
-      <p>Estimation gratuite, mise en valeur de votre bien, négociation et suivi jusqu'à l'acte authentique.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">⌂</div>
-      <h3>Gestion locative</h3>
-      <p>Recherche de locataires fiables, encaissement des loyers, indexation annuelle, états des lieux et suivi technique.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">€</div>
-      <h3>Conseil en investissement</h3>
-      <p>Analyse de rendement, sélection de biens à fort potentiel, accompagnement fiscal et juridique.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">✓</div>
-      <h3>Mandat exclusif</h3>
-      <p>Un agent dédié, un dossier unique, une communication claire. Votre projet immobilier mérite un interlocuteur unique.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============= CONTACT ============= -->
-<section class="contact-section" id="contact">
-  <div class="contact-grid">
+  <div class="container hero-grid">
 
     <div>
-      <h2>Contactez-nous</h2>
-      <p class="contact-lead">Pour toute question sur la vente, l'achat ou la gestion de votre bien à Bruxelles.</p>
-
-      <div class="contact-info">
-
-        <div class="contact-row">
-          <div class="contact-label">Adresse</div>
-          <div class="contact-value">
-            <strong>Capital Home SA</strong><br>
-            Blue Tower<br>
-            Avenue Louise 326<br>
-            1050 Bruxelles
-          </div>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">Téléphone</div>
-          <div class="contact-value">
-            <a href="tel:+32477071339">+32 477 07 13 39</a>
-          </div>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">
-            <a href="mailto:contact@capitalhome.be">contact@capitalhome.be</a>
-          </div>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">TVA</div>
-          <div class="contact-value">BE 0533.747.448</div>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">IPI</div>
-          <div class="contact-value">Agent immobilier agréé n° 501063</div>
-        </div>
-
+      <div class="hero-eyebrow">Depuis 2013 · Avenue Louise</div>
+      <h1 class="hero-title">L'immobilier bruxellois,<br><em>avec exigence</em></h1>
+      <p class="hero-subtitle">
+        Vente, location et gestion locative au cœur de Bruxelles. Notre service&nbsp;: zéro souci pour un rendement garanti.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:+32477071339" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Nous appeler
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          Prendre rendez-vous
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
 
-    <div class="contact-cta-block">
-      <h3>Ne ratez aucune opportunité</h3>
-      <p>Contactez-nous sans engagement pour discuter de votre projet immobilier.</p>
-
-      <a href="tel:+32477071339" class="contact-cta-btn">Appeler maintenant</a>
-      <a href="mailto:contact@capitalhome.be?subject=Demande%20depuis%20capitalhome.be" class="contact-cta-btn secondary">Envoyer un email</a>
-    </div>
+    <aside class="hero-card">
+      <div class="hero-card-label">Pourquoi Capital Home</div>
+      <div class="hero-card-title">Une approche discrète et personnalisée</div>
+      <ul class="hero-card-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          12 ans d'expertise sur le marché bruxellois
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Mandat unique, interlocuteur unique
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Estimation gratuite sans engagement
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Agent agréé IPI · code déontologique
+        </li>
+      </ul>
+    </aside>
 
   </div>
 </section>
 
-<!-- ============= FOOTER ============= -->
-<footer>
-  <div class="legal">
-    <strong>Capital Home SA</strong> · Avenue Louise 326, 1050 Bruxelles<br>
-    TVA BE 0533.747.448 · IPI n° 501063 · Instance de contrôle&nbsp;: IPI, Rue de Luxembourg 16B, 1000 Bruxelles<br>
-    Soumis au code déontologique de l'IPI
+<!-- ━━━━━━━━ STATS ━━━━━━━━ -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div data-reveal>
+      <div class="stat-num">12<small>ans</small></div>
+      <div class="stat-label">D'expérience</div>
+    </div>
+    <div data-reveal>
+      <div class="stat-num">500<small>+</small></div>
+      <div class="stat-label">Transactions</div>
+    </div>
+    <div data-reveal>
+      <div class="stat-num">1050</div>
+      <div class="stat-label">Bruxelles · Ixelles</div>
+    </div>
+    <div data-reveal>
+      <div class="stat-num">IPI<small>n°501063</small></div>
+      <div class="stat-label">Agent agréé</div>
+    </div>
   </div>
-  <div class="copyright">
-    © Capital Home SA — Tous droits réservés
+</section>
+
+<!-- ━━━━━━━━ SERVICES ━━━━━━━━ -->
+<section id="services">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-eyebrow">Nos services</span>
+      <h2 class="section-title">Quatre métiers, <em>une exigence</em></h2>
+      <p class="section-lead">
+        De l'estimation à la gestion long terme, Capital Home accompagne propriétaires, acquéreurs et locataires sur l'ensemble du cycle immobilier bruxellois.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="service-num">01</div>
+        <h3 class="service-title">Vente immobilière</h3>
+        <p class="service-desc">Estimation gratuite, mise en valeur professionnelle, négociation et suivi jusqu'à l'acte authentique.</p>
+      </article>
+
+      <article class="service" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="service-num">02</div>
+        <h3 class="service-title">Gestion locative</h3>
+        <p class="service-desc">Recherche de locataires fiables, encaissement, indexation annuelle, états des lieux et suivi technique.</p>
+      </article>
+
+      <article class="service" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div class="service-num">03</div>
+        <h3 class="service-title">Conseil en investissement</h3>
+        <p class="service-desc">Analyse de rendement, sélection de biens à fort potentiel, accompagnement fiscal et juridique.</p>
+      </article>
+
+      <article class="service" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        </div>
+        <div class="service-num">04</div>
+        <h3 class="service-title">Mandat exclusif</h3>
+        <p class="service-desc">Un agent dédié, un dossier unique, une communication claire. Votre projet immobilier mérite un interlocuteur unique.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ APPROACH ━━━━━━━━ -->
+<section class="approach">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-eyebrow" style="color: var(--gold-400)">Notre méthode</span>
+      <h2 class="section-title">Trois temps, <em>une promesse</em></h2>
+      <p class="section-lead">Une démarche en trois étapes pour vendre, louer ou investir l'esprit tranquille.</p>
+    </div>
+
+    <div class="approach-grid">
+      <div class="approach-item" data-reveal>
+        <div class="approach-item-num">i</div>
+        <h3 class="approach-item-title">Écouter</h3>
+        <p class="approach-item-desc">Comprendre votre projet, votre patrimoine, votre horizon. Sans engagement, sans pression.</p>
+      </div>
+      <div class="approach-item" data-reveal>
+        <div class="approach-item-num">ii</div>
+        <h3 class="approach-item-title">Conseiller</h3>
+        <p class="approach-item-desc">Estimer juste, structurer la stratégie, anticiper les contraintes fiscales et juridiques.</p>
+      </div>
+      <div class="approach-item" data-reveal>
+        <div class="approach-item-num">iii</div>
+        <h3 class="approach-item-title">Réaliser</h3>
+        <p class="approach-item-desc">Exécuter avec discrétion. Suivi personnalisé, reporting régulier, jusqu'à la signature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ CONTACT ━━━━━━━━ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-eyebrow">Contact</span>
+      <h2 class="section-title">Parlons de votre <em>projet</em></h2>
+      <p class="section-lead">Une question, une estimation, une visite&nbsp;? Nous vous répondons sous 24h.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div data-reveal>
+        <div class="contact-info-block">
+          <div class="contact-info-label">Adresse</div>
+          <div class="contact-info-value">
+            Capital Home SA<br>
+            Blue Tower · Avenue Louise 326
+          </div>
+          <div class="contact-info-sub">1050 Bruxelles, Belgique</div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-label">Téléphone</div>
+          <div class="contact-info-value"><a href="tel:+32477071339">+32 477 07 13 39</a></div>
+          <div class="contact-info-sub">Lundi → Vendredi · 9h – 18h</div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="mailto:contact@capitalhome.be">contact@capitalhome.be</a></div>
+          <div class="contact-info-sub">Réponse sous 24h ouvrées</div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-label">Mentions légales</div>
+          <div class="contact-info-value" style="font-size: 16px; font-family: 'Inter'; color: var(--ink-soft); line-height: 1.7;">
+            TVA BE&nbsp;0533.747.448<br>
+            Agent immobilier IPI n°&nbsp;501063<br>
+            Soumis au code déontologique de l'IPI
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card" data-reveal>
+        <h3 class="contact-card-title">Ne ratez aucune opportunité</h3>
+        <p class="contact-card-lead">
+          Contactez-nous sans engagement pour discuter de la vente, l'achat ou la gestion de votre bien à Bruxelles. Nos conseillers vous répondent personnellement.
+        </p>
+        <a href="tel:+32477071339" class="btn btn-dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Appeler maintenant
+        </a>
+        <a href="mailto:contact@capitalhome.be?subject=Demande%20depuis%20capitalhome.be" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Envoyer un email
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ FOOTER ━━━━━━━━ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-line">
+          <span class="brand-mark" style="color: var(--gold-500); border-color: var(--gold-500);">C</span>
+          <span class="brand-text" style="color: white; font-size: 22px;">Capital Home<small style="color: var(--gold-400);">Real Estate · Bruxelles</small></span>
+        </div>
+        <p>Agence immobilière de référence à Bruxelles depuis 2013. Vente, location et gestion locative sur Bruxelles, Ixelles, Uccle, Woluwé.</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Blue Tower · Avenue Louise 326</li>
+          <li>1050 Bruxelles</li>
+          <li><a href="tel:+32477071339">+32 477 07 13 39</a></li>
+          <li><a href="mailto:contact@capitalhome.be">contact@capitalhome.be</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Légal</h4>
+        <ul>
+          <li>TVA BE 0533.747.448</li>
+          <li>Agent IPI n° 501063</li>
+          <li>Instance : IPI, Rue de Luxembourg 16B</li>
+          <li>1000 Bruxelles</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="y">2026</span> Capital Home SA · Tous droits réservés</span>
+      <span>Crafted with care</span>
+    </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('visible'));
+  }
+</script>
 
 </body>
 </html>
